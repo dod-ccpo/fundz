@@ -6,8 +6,8 @@ set -e
 # Ensure we are in the app root directory (not the /script directory)
 cd "$(dirname "${0}")/.."
 
-# Install virtualenv
-pip install pipenv
+# Install pipenv
+pip install pipenv --user
 
 # Install application dependencies
 script/bootstrap
