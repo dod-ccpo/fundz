@@ -7,21 +7,17 @@
 
     script/setup
 
-The setup script will create a new Python virtual environment for the application to use. All of the scripts will activate this virutal envirnment automatically, but you can also manually activate it like this:
+The setup script installs pipenv, which is what this application uses to manage its dependences and virtualenv. Instead of the classic `requirements.txt` file, pipenv uses a Pipfile and Pipfile.lock, making it more similar to other modern package managers like yarn or mix.
 
-    source .venv/bin/activate
+To enter the virtualenv manually (a la `source .venv/bin/activate`):
 
-When you are done, type
-
-    deactivate
-
-If you want to automatically load the virtual environment whenever you enter the project directory, take a look at [direnv](https://direnv.net/).  An `.envrc` file is included in this repository.  direnv will activate and deactivate virtualenvs for you when you enter and leave the directory.
+    pipenv shell
 
 ## Running (development)
 
 To start the app and watch for changes:
 
-    DEBUG=1 script/server
+    script/server
 
 ## Testing
 
@@ -33,10 +29,6 @@ or
 
     python -m pytest
 
-## Notes
+To run the unit tests and watch for changes to python files:
 
-tornado templates are like mustache templates -- add the
-following to `~/.vim/filetype.vim` for syntax highlighting:
-
-    :au BufRead *.html.to set filetype=mustache
-
+    script/test watch
