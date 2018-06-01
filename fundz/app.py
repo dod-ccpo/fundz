@@ -1,13 +1,13 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
+from flask_marshmallow import Marshmallow
 
-from fundz.api import api
 
 app = Flask(__name__)
 app.config.from_object('fundz.config')
-app.register_blueprint(api)
-
 db = SQLAlchemy(app)
+ma = Marshmallow(app)
 
-# Import our models so Alembic can autogenerate migrations.
-from fundz.models import *
+# Imported at the end to avoid circular imports.
+from fundz.api import api
+app.register_blueprint(api)
