@@ -7,7 +7,7 @@ set -e
 cd "$(dirname "${0}")/.."
 
 # Run the database
-docker-compose up -d
+docker-compose up -d db
 
 # Launch the app
 pipenv run python main.py ${@}

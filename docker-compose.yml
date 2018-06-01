@@ -9,3 +9,14 @@ services:
       - POSTGRES_DB=fundz
     ports:
       - "5432:5432"
+  backend:
+    build: .
+    volumes:
+      - .:/app
+    environment:
+      - DATABASE_URI=postgres://postgres:postgres@db/fundz
+      - DEBUG=True
+    links:
+      - "db:db"
+    ports:
+      - "8081:80"
