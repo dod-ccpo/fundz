@@ -1,6 +1,6 @@
 import os
 
-FLASK_ENV = os.getenv('ENVIRONMENT', 'development')
+ENV = os.getenv('ENVIRONMENT', 'development')
 DEBUG = bool(os.getenv('DEBUG', True))
 
 SQLALCHEMY_DATABASE_URI = os.getenv(
