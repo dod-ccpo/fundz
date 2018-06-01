@@ -32,3 +32,9 @@ or
 To run the unit tests and watch for changes to python files:
 
     script/test watch
+
+## Environment Variables
+
+`ENVIRONMENT`: Maps to `FLASK_ENV`. Can be either `development` or `production`.
+`DEBUG`: Enable debug mode.
+`DATABASE_URI`: The full database connection string.
