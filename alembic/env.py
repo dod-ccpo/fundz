@@ -7,7 +7,6 @@ from logging.config import fileConfig
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.
 config = context.config
-config.set_main_option('sqlalchemy.url', os.getenv('DATABASE_URI'))
 
 # Interpret the config file for Python logging.
 # This line sets up loggers basically.
@@ -21,9 +20,11 @@ import sys
 parent_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 sys.path.append(parent_dir)
 
-from fundz.app import db
-from fundz.models import *
+from fundz.make_app import make_config
+app_config = make_config()
+config.set_main_option('sqlalchemy.url', app_config['SQLALCHEMY_DATABASE_URI'])
 
+from fundz.database import db
 target_metadata = db.metadata
 
 # other values from the config, defined by the needs of env.py,

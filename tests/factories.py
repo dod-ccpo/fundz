@@ -1,6 +1,6 @@
 from factory.alchemy import SQLAlchemyModelFactory
 
-from fundz.app import db
+from fundz.make_app import db
 from fundz import models
 
 
