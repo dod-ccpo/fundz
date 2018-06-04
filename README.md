@@ -33,6 +33,10 @@ To run the unit tests and watch for changes to python files:
 
     script/test watch
 
+## Direnv
+
+If you're using direnv, refer to ![this page](https://github.com/direnv/direnv/wiki/Python#-pipenv).
+
 ## Environment Variables
 
 `ENVIRONMENT`: Maps to `FLASK_ENV`. Can be either `development` or `production`.
