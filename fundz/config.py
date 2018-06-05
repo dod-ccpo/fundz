@@ -1,10 +1,7 @@
-import os
-
-ENV = os.getenv('ENVIRONMENT', 'development')
-DEBUG = bool(os.getenv('DEBUG', True))
-
-SQLALCHEMY_DATABASE_URI = os.getenv(
-    'DATABASE_URI',
-    'postgres://postgres:postgres@localhost/fundz'
-)
-SQLALCHEMY_TRACK_MODIFICATIONS = False
+def map_config(config):
+    return {
+        'ENV': config['default']['ENVIRONMENT'],
+        'DEBUG': config['default']['DEBUG'],
+        'SQLALCHEMY_DATABASE_URI': config['default']['DATABASE_URI'],
+        'SQLALCHEMY_TRACK_MODIFICATIONS': False
+    }

@@ -1,7 +1,7 @@
-from fundz.app import ma
+from . import marshmallow
 from fundz.models import TaskOrder
 
 
-class TaskOrderSerializer(ma.ModelSchema):
+class TaskOrderSerializer(marshmallow.ModelSchema):
     class Meta:
         model = TaskOrder
