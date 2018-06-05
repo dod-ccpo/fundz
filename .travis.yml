@@ -4,7 +4,5 @@ python:
 before_install:
   - pip install pipenv
   - pipenv install --dev --skip-lock
-  - gem install sass
-  - npm install
 script:
-  - python -m pytest
+  - script/test
