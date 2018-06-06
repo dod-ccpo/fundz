@@ -4,7 +4,12 @@ python:
 before_install:
   - pip install pipenv
   - pipenv install --dev --skip-lock
-  - gem install sass
-  - npm install
+before_script:
+  - psql -c 'create database fundz_ci;' -U postgres
+  - pipenv run alembic upgrade head
 script:
   - python -m pytest
+services:
+  - postgresql
+env:
+  - FLASK_ENV=ci
