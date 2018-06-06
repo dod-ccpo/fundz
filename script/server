@@ -6,8 +6,5 @@ set -e
 # Ensure we are in the app root directory (not the /script directory)
 cd "$(dirname "${0}")/.."
 
-# Run the database
-docker-compose up -d db
-
 # Launch the app
 pipenv run python main.py ${@}
