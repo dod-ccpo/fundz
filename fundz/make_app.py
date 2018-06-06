@@ -21,11 +21,17 @@ def make_app(config):
 
 
 def make_config():
-    CONFIG_FILENAME = os.path.join(
+    BASE_CONFIG_FILENAME = os.path.join(
         os.path.dirname(__file__),
-        '..',
-        os.getenv('CONFIG_FILENAME', 'config.ini')
+        '../config/base.ini',
+    )
+    ENV_CONFIG_FILENAME = os.path.join(
+        os.path.dirname(__file__),
+        '../config/',
+        '{}.ini'.format(os.getenv('FLASK_ENV', 'dev').lower())
     )
     config = ConfigParser()
-    config.read(CONFIG_FILENAME)
+
+    # ENV_CONFIG will override values in BASE_CONFIG.
+    config.read([BASE_CONFIG_FILENAME, ENV_CONFIG_FILENAME])
     return map_config(config)

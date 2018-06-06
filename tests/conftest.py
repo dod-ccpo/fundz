@@ -1,13 +1,8 @@
 import pytest
 
-from fundz.make_app import make_app
+from fundz.make_app import make_app, make_config
 
 
 @pytest.fixture
 def app():
-    return make_app({
-        'SQLALCHEMY_DATABASE_URI': 'postgres://postgres:postgres@localhost/fundz',
-        'SQLALCHEMY_TRACK_MODIFICATIONS': False,
-        'ENVIRONMENT': 'test',
-        'DEBUG': False
-    })
+    return make_app(make_config())

@@ -6,8 +6,6 @@ set -e
 # Ensure we are in the app root directory (not the /script directory)
 cd "$(dirname "${0}")/.."
 
-docker-compose up -d db
-
 if [ "$1" = "watch" ]; then
   ag -l -G [py]$ | entr pipenv run python -m pytest
 else
