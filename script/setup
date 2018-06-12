@@ -8,6 +8,7 @@ cd "$(dirname "${0}")/.."
 
 # Install pipenv
 pip install pipenv --user
+pipenv --python 3.6
 
 # Install application dependencies
 script/bootstrap
