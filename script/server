@@ -2,11 +2,11 @@
 
 reap() {
    kill -TERM $child
-   sleep 1
+   sleep 0.1
    exit
 }
 
-trap reap TERM
+trap reap TERM INT
 
 # If a command fails, exit the script
 set -e
