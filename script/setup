@@ -7,7 +7,11 @@ set -e
 cd "$(dirname "${0}")/.."
 
 # Install pipenv
-pip install pipenv --user
+if [ -n "${CI+set}" ]; then
+  pip install pipenv
+else
+  pip install -q pipenv --user
+fi
 pipenv --python 3.6
 
 # Install application dependencies
