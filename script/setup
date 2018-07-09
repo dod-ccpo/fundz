@@ -18,3 +18,5 @@ pipenv --python 3.6
 
 # Install application dependencies
 script/bootstrap
+
+pipenv run alembic upgrade head
