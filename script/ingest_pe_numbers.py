@@ -34,7 +34,7 @@ if __name__ == "__main__":
     config = make_config()
     app = make_app(config)
     db = SQLAlchemy(app)
-    url = "http://c95e1ebb198426ee57b8-174bb05a294821bedbf46b6384fe9b1f.r31.cf5.rackcdn.com/penumbers.csv"
+    url = config['PE_NUMBER_CSV_URL']
     print("Fetching PE numbers from {}".format(url))
     pe_numbers = get_pe_numbers(url)
     print("Inserting {} PE numbers".format(len(pe_numbers)))
