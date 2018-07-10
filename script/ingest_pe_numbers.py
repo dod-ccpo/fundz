@@ -4,6 +4,12 @@ import csv
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.dialects.postgresql import insert
 
+# Add root project dir to the python path
+import os
+import sys
+parent_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+sys.path.append(parent_dir)
+
 from fundz.make_app import make_app, make_config
 from fundz.models import PENumber
 
