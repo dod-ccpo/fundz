@@ -1,5 +1,5 @@
 
-# ATST
+# fundz
 
 [![Build Status](https://travis-ci.org/dod-ccpo/atst.svg?branch=master)](https://travis-ci.org/dod-ccpo/atst)
 

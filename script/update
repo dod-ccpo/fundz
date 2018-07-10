@@ -10,3 +10,4 @@ cd "$(dirname "${0}")/.."
 script/bootstrap
 
 pipenv run alembic upgrade head
+pipenv run python script/ingest_pe_numbers.py
