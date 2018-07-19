@@ -16,8 +16,7 @@ before_install:
   # Manually initialize submodules
   - git submodule update --init --recursive
   - pip install pipenv
-  - pipenv install --dev --skip-lock
 before_script:
-  - script/cibuild
+  - script/setup
 script:
-  - python -m pytest
+  - script/cibuild
